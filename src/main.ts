@@ -119,7 +119,7 @@ export default class AttributesPlugin extends Plugin {
                       // line once for every hashtag found. it works but it could be better.
                       let line = view.state.doc.lineAt(from);
                       let deco = Decoration.line({
-                        attributes: { "data-tags": line.text.match(hashTagRegexp)?.join(" ").replace(/#/g, "") },
+                        attributes: { "class": line.text.match(hashTagRegexp)?.join(" ").replace(/#/g, "") },
                       });
                       // TODO: Figure out a better way to fix the pos conflict when
                       //       a top level list item has a hashtag at the beginning of the line
